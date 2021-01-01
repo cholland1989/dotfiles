@@ -1,0 +1,4 @@
+[helpers]
+
+# Enable colors in terminal output.
+diff-cmd = colordiff
