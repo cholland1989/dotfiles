@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# Disable command completion for empty lines.
+shopt -s no_empty_cmd_completion
+
+# Enable extended pattern matching features.
+shopt -s extglob
+
+# Enable directory and subdirectory expansion.
+shopt -s globstar
+
+# Append history to file, instead of overwriting.
+shopt -s histappend
+
+# Save multi-line commands as a single history entry.
+shopt -s cmdhist
