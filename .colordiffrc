@@ -1,0 +1,14 @@
+# Disable colors in file output.
+color_patches=no
+
+# Ignore unchanged lines.
+plain=normal
+
+# Highlight metadata.
+diffstuff=darkcyan
+
+# Highlight added lines.
+newtext=darkgreen
+
+# Highlight removed lines.
+oldtext=darkred
