@@ -1,0 +1,107 @@
+# Set terminal type.
+Term=xterm-256color
+
+# Set language.
+Locale=en_US
+
+# Set character encoding.
+Charset=UTF-8
+
+# Set terminal width.
+Columns=128
+
+# Set terminal height.
+Rows=32
+
+# Set scrollback buffer.
+ScrollbackLines=3000
+
+# Disable scrollbar.
+Scrollbar=none
+
+# Set font family.
+Font=Consolas
+
+# Set font size.
+FontHeight=12
+
+# Disable bold fonts.
+BoldAsFont=no
+
+# Copy as plain-text.
+CopyAsRTF=no
+
+# Enable copy-paste shortcuts.
+CtrlShiftShortcuts=yes
+
+# Set cursor type.
+CursorType=block
+
+# Disable blinking cursor.
+CursorBlinks=no
+
+# Set background color.
+BackgroundColour=34,34,34
+
+# Set foreground color.
+ForegroundColour=207,207,194
+
+# Set cursor color.
+CursorColour=248,248,240
+
+# Set black color.
+Black=34,34,34
+
+# Set bold black color.
+BoldBlack=117,113,94
+
+# Set red color.
+Red=249,42,114
+
+# Set bold red color.
+BoldRed=249,42,114
+
+# Set green color.
+Green=166,226,46
+
+# Set bold green color.
+BoldGreen=166,226,46
+
+# Set yellow color.
+Yellow=230,219,116
+
+# Set bold yellow color.
+BoldYellow=230,219,116
+
+# Set blue color.
+Blue=174,129,255
+
+# Set bold blue color.
+BoldBlue=174,129,255
+
+# Set magenta color.
+Magenta=249,42,114
+
+# Set bold magenta color.
+BoldMagenta=249,42,114
+
+# Set cyan color.
+Cyan=102,217,239
+
+# Set bold cyan color.
+BoldCyan=102,217,239
+
+# Set white color.
+White=207,207,194
+
+# Set bold white color.
+BoldWhite=248,248,242
+
+# Disable bell.
+BellType=0
+
+# Disable visual bell.
+BellTaskbar=no
+
+# Disable confirm exit.
+ConfirmExit=no
