@@ -14,7 +14,7 @@
 [core]
 
     # Set the editor for commit messages.
-    editor=vim
+    editor = vim
 
     # Enable the filesystem cache.
     fscache = true
