@@ -1,0 +1,71 @@
+[user]
+
+    # Set the author field of commits.
+    name = Corey Holland
+
+    # Set the committer field of commits.
+    email = cholland1989@fastmail.com
+
+[init]
+
+    # Set the default branch name.
+    defaultBranch = master
+
+[core]
+
+    # Set the editor for commit messages.
+    editor=vim
+
+    # Enable the filesystem cache.
+    fscache = true
+
+    # Enable parallel index preload.
+    preloadIndex = true
+
+    # Speed up commands involving untracked files.
+    untrackedCache = true
+
+    # Prevent showing files whose names contain Unicode symbols as unversioned.
+    precomposeUnicode = false
+
+    # Make rebase safer on macOS.
+    trustctime = false
+
+[color]
+
+    # Enable colors in terminal output.
+    ui = auto
+
+[branch]
+
+    # Sort branches by most recent commit.
+    sort = -committerdate
+
+[diff]
+
+    # Attempt to preserve more context.
+    algorithm = patience
+
+    # Attempt to make the resulting patch easier to read.
+    compactionHeuristic = true
+
+    # Detect copies as well as renames.
+    renames = copies
+
+[diff "bin"]
+
+    # Show hex comparison of binary files.
+    textconv = hexdump -v -C
+
+[push]
+
+    # Refuse to push if the upstream branch's name is different.
+    default = simple
+
+    # Push relevant annotated tags.
+    followTags = true
+
+[pull]
+
+    # Retain the default merge strategy.
+    rebase = false
