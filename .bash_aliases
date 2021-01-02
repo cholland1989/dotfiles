@@ -55,13 +55,13 @@ alias rm="rm --recursive --force"
 alias yt="youtube-dl --output '%(title)s.%(ext)s' --format bestvideo[ext=mp4]+bestaudio[ext=m4a] --merge-output-format mp4 --ignore-errors"
 
 # Hide files and directories.
-[ "$(uname)" == "Darwin" ] && alias hide="chflags hidden"
+[ "${TERM_PROGRAM}" == "iTerm.app" ] && alias hide="chflags hidden"
 
 # Show files and directories.
-[ "$(uname)" == "Darwin" ] && alias show="chflags nohidden"
+[ "${TERM_PROGRAM}" == "iTerm.app" ] && alias show="chflags nohidden"
 
 # Open a new Cygwin terminal.
-[ "$(uname -o)" == "Cygwin" ] && alias cygwin="mintty -d - &"
+[ "${TERM_PROGRAM}" == "mintty" ] && alias cygwin="mintty -d - &"
 
 # Open files and directories with default handler.
-[ "$(uname -o)" == "Cygwin" ] && alias open="cygstart"
+[ "${TERM_PROGRAM}" == "mintty" ] && alias open="cygstart"
