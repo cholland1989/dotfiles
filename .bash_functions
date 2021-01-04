@@ -23,21 +23,22 @@ function ffremux() {
     elif [ -d "${1}" ]; then
         for FILE in "${1}"/**/*.{m4v,mkv,avi}; do ffremux "${FILE}"; done
     elif [ -f "${1}" ]; then
+        INDEX='BEGIN { FS = ":" } { print $1 }'
         PROBE=$(ffprobe -i "${1}" 2>&1 >/dev/null)
-        H264=$(echo "${PROBE}" | grep "Video: h264" | wc --lines)
-        FLAC=$(echo "${PROBE}" | grep "Audio: flac" | wc --lines)
-        ENG0=$(echo "${PROBE}" | grep "0(eng): Audio" | wc --lines)
-        ENG1=$(echo "${PROBE}" | grep "1(eng): Audio" | wc --lines)
-        ENG2=$(echo "${PROBE}" | grep "2(eng): Audio" | wc --lines)
-        SUBS=$(echo "${PROBE}" | grep "(eng): Audio" | wc --lines)
+        VIDEO=$(echo "${PROBE}" | grep "Video:" | grep "Stream #")
+        AUDIO=$(echo "${PROBE}" | grep "Audio:" | grep "Stream #")
+        H264=$(echo "${VIDEO}" | grep -n "h264" | head -n 1 | awk "${INDEX}")
+        FLAC==$(echo "${AUDIO}" | head -n 1 | grep "flac")
+        ENGS=$(echo "${AUDIO}" | grep -n -E "(eng)|(und)|[^)]: Audio" | head -n 1)
+        [ -n "${ENGS}" ] && FLAC=$(echo "${ENGS}" | grep "flac")
+        ENGS=$(echo "${ENGS}" | awk "${INDEX}")
         ARGS="-map_metadata -1 -map_chapters -1"
-        [[ "${H264}" -eq "1" ]] && ARGS="${ARGS} -c:v copy"
-        [[ "${H264}" -ne "1" ]] && ARGS="${ARGS} -c:v h264 -preset slower -crf 15 -pix_fmt yuv420p"
-        [[ "${FLAC}" -eq "0" ]] && ARGS="${ARGS} -c:a copy"
-        [[ "${FLAC}" -ne "0" ]] && ARGS="${ARGS} -c:a ac3"
-        [[ "${ENG0}" -eq "0" && "${ENG1}" -eq "0" && "${ENG2}" -ne "0" ]] && ARGS="${ARGS} -map 0:a:1"
-        [[ "${SUBS}" -eq "0" ]] && ARGS="${ARGS} -c:s mov_text -metadata:s:s:0 language=eng"
-        [[ "${SUBS}" -ne "0" ]] && ARGS="${ARGS} -metadata:s:a:0 language=eng"
+        [ -n "${H264}" ] && ARGS="${ARGS} -c:v copy -map 0:v:$(expr ${H264} - 1)"
+        [ -z "${H264}" ] && ARGS="${ARGS} -c:v h264 -preset slower -crf 15 -pix_fmt yuv420p -map 0:v:0"
+        [ -n "${FLAC}" ] && ARGS="${ARGS} -c:a ac3"
+        [ -z "${FLAC}" ] && ARGS="${ARGS} -c:a copy"
+        [ -n "${ENGS}" ] && ARGS="${ARGS} -map 0:a:$(expr ${ENGS} - 1) -metadata:s:a:0 language=eng"
+        [ -z "${ENGS}" ] && ARGS="${ARGS} -map 0:a:0 -c:s mov_text -metadata:s:s:0 language=eng"
         ffmpeg -i "${1}" ${ARGS} "${1%.*}.mp4"
         rename --expr 's/.*[sS](\d\d)[eE](\d\d).*/S$1E$2.mp4/' "${1%.*}.mp4"
     fi
