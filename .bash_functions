@@ -27,7 +27,7 @@ function ffremux() {
         PROBE=$(ffprobe -i "${1}" 2>&1 >/dev/null)
         VIDEO=$(echo "${PROBE}" | grep "Video:" | grep "Stream #")
         AUDIO=$(echo "${PROBE}" | grep "Audio:" | grep "Stream #")
-        H264=$(echo "${VIDEO}" | grep -n "h264" | head -n 1 | awk "${INDEX}")
+        H264=$(echo "${VIDEO}" | grep -n "h264" | grep -v "High 10" | head -n 1 | awk "${INDEX}")
         FLAC==$(echo "${AUDIO}" | head -n 1 | grep "flac")
         ENGS=$(echo "${AUDIO}" | grep -n -E "(eng)|(und)|[^)]: Audio" | head -n 1)
         [ -n "${ENGS}" ] && FLAC=$(echo "${ENGS}" | grep "flac")
