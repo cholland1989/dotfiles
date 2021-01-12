@@ -49,4 +49,4 @@ export ANSIBLE_SSH_ARGS="-o ControlMaster=no"
 [ -d "/usr/local/etc/bash_completion.d" ] && export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
 
 # Update system path.
-[ -d "/opt" ] && for DIR in $(find /opt -follow -maxdepth 1 -type d); do export PATH="${DIR}/bin:${DIR}:${PATH}"; done
+[ -d "/opt" ] && for DIR in $(find /opt -follow -maxdepth 2 -type d -name bin); do export PATH="${DIR}:${PATH}"; done
