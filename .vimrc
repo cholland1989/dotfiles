@@ -11,7 +11,7 @@ set number
 set nowrap
 
 " Enable syntax highlighting.
-set syntax=on
+syntax on
 
 " Set the character encoding of the editor.
 set encoding=utf-8

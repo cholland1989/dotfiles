@@ -2,12 +2,12 @@
 
 # Remove all Docker containers and images.
 function docker-clean() {
-    if [ $(docker ps --all --quiet | wc --lines) -gt 0 ]; then
-        docker stop $(docker ps --all --quiet)
-        docker rm $(docker ps --all --quiet)
+    if [ $(docker ps -aq | wc -l) -gt 0 ]; then
+        docker stop $(docker ps -aq)
+        docker rm $(docker ps -aq)
     fi
-    if [ $(docker images --quiet | wc --lines) -gt 0 ]; then
-        docker rmi $(docker images --quiet)
+    if [ $(docker images -q | wc -l) -gt 0 ]; then
+        docker rmi $(docker images -q)
     fi
 }
 

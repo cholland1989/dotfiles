@@ -7,22 +7,22 @@ alias sudo="sudo -E "
 alias kill="kill -SIGKILL"
 
 # Report disk usage in human readable format.
-alias df="df --human-readable"
+alias df="df -h"
 
 # List files and directories in human readable format.
-alias ls="ls -l --literal --classify --human-readable --color"
+[ "${TERM_PROGRAM}" == "iTerm.app" ] && alias ls="ls -lhF" || alias ls="ls -lhFN --color"
 
 # Create parent directories as needed.
-alias mkdir="mkdir --parents"
+alias mkdir="mkdir -p"
 
 # Change file mode recursively.
-alias chmod="chmod --recursive"
+alias chmod="chmod -R"
 
 # Change file owner recursively.
-alias chown="chown --recursive"
+alias chown="chown -R"
 
 # Display new output to file.
-alias tail="tail --follow --lines 128"
+alias tail="tail -128f"
 
 # Replace diff with colordiff.
 alias diff="colordiff"
@@ -34,22 +34,22 @@ alias vi="vim"
 alias mate="subl"
 
 # Prefer symbolic links.
-alias ln="ln --symbolic"
+alias ln="ln -s"
 
 # Copy files and directories recursively.
-alias cp="cp --recursive"
+alias cp="cp -R"
 
 # Copy files and directories recursively.
-alias scp="scp -r -p"
+alias scp="scp -rp"
 
 # Sync files and directories recursively.
 alias rsync="rsync --archive --delete --compress --info=progress2"
 
 # Archive recursively and include symbolic links.
-alias zip="zip --recurse-paths --symlinks --quiet"
+alias zip="zip -qry"
 
 # Delete files and directories recursively.
-alias rm="rm --recursive --force"
+alias rm="rm -rf"
 
 # Download best available video and audio from YouTube.
 alias yt="youtube-dl --output '%(title)s.%(ext)s' --format bestvideo[ext=mp4]+bestaudio[ext=m4a] --merge-output-format mp4 --ignore-errors"
