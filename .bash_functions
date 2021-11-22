@@ -28,8 +28,8 @@ function ffremux() {
         VIDEO=$(echo "${PROBE}" | grep "Video:" | grep "Stream #")
         AUDIO=$(echo "${PROBE}" | grep "Audio:" | grep "Stream #")
         H264=$(echo "${VIDEO}" | grep -n "h264" | grep -v "High 10" | head -n 1 | awk "${INDEX}")
-        FLAC==$(echo "${AUDIO}" | head -n 1 | grep "flac")
-        ENGS=$(echo "${AUDIO}" | grep -n -E "(eng)|(und)|[^)]: Audio" | head -n 1)
+        FLAC=$(echo "${AUDIO}" | head -n 1 | grep "flac")
+        ENGS=$(echo "${AUDIO}" | grep -n -E "(eng)|(und)|[^)]: Audio" | grep -v "truehd" | head -n 1)
         [ -n "${ENGS}" ] && FLAC=$(echo "${ENGS}" | grep "flac")
         ENGS=$(echo "${ENGS}" | awk "${INDEX}")
         ARGS="-map_metadata -1 -map_chapters -1"
@@ -38,7 +38,7 @@ function ffremux() {
         [ -n "${FLAC}" ] && ARGS="${ARGS} -c:a ac3"
         [ -z "${FLAC}" ] && ARGS="${ARGS} -c:a copy"
         [ -n "${ENGS}" ] && ARGS="${ARGS} -map 0:a:$(expr ${ENGS} - 1) -metadata:s:a:0 language=eng"
-        [ -z "${ENGS}" ] && ARGS="${ARGS} -map 0:a:0 -c:s mov_text -metadata:s:s:0 language=eng"
+        [ -z "${ENGS}" ] && ARGS="${ARGS} -map 0:a:0 -c:s mov_text -metadata:s:s:0 language=eng -map 0:s:0"
         ffmpeg -i "${1}" ${ARGS} "${1%.*}.mp4"
         rename --expr 's/.*[sS](\d\d)[eE](\d\d).*/S$1E$2.mp4/' "${1%.*}.mp4"
     fi
