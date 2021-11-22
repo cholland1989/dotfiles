@@ -7,6 +7,9 @@ Locale=en_US
 # Set character encoding.
 Charset=UTF-8
 
+# Maximize window.
+Window=max
+
 # Set terminal width.
 Columns=128
 
