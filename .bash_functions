@@ -7,7 +7,7 @@ function docker-clean() {
         docker rm $(docker ps -aq)
     fi
     if [ $(docker images -q | wc -l) -gt 0 ]; then
-        docker rmi $(docker images -q)
+        docker rmi -f $(docker images -q)
     fi
 }
 
