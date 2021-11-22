@@ -11,6 +11,31 @@ function docker-clean() {
     fi
 }
 
+# Generate password based on pattern.
+function pwgen() {
+    PASSWORD=""
+    UPPER="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    LOWER="abcdefghijklmnopqrstuvwxyz"
+    DIGIT="1234567890"
+    SYMBOL="!@#$%^&*()"
+    ASCII="${UPPER}${LOWER}${DIGIT}${SYMBOL}"
+    for (( INDEX = 0; INDEX < ${#1}; INDEX++ )); do
+        CHAR="${1:${INDEX}:1}"
+        if [[ "${CHAR}" == "A" ]]; then
+            PASSWORD="${PASSWORD}${UPPER:$((RANDOM % ${#UPPER})):1}"
+        elif [[ "${CHAR}" == "a" ]]; then
+            PASSWORD="${PASSWORD}${LOWER:$((RANDOM % ${#LOWER})):1}"
+        elif [[ "${CHAR}" == "#" ]]; then
+            PASSWORD="${PASSWORD}${DIGIT:$((RANDOM % ${#DIGIT})):1}"
+        elif [[ "${CHAR}" == "@" ]]; then
+            PASSWORD="${PASSWORD}${SYMBOL:$((RANDOM % ${#SYMBOL})):1}"
+        else
+            PASSWORD="${PASSWORD}${ASCII:$((RANDOM % ${#ASCII})):1}"
+        fi
+    done
+    echo "${PASSWORD}"
+}
+
 # Split a video at the specified timestamp.
 function ffsplit() {
     ffmpeg -i "${2}" -t ${1} -c copy "${2%.*}_1.${2##*.}" -ss ${1} -c copy "${2%.*}_2.${2##*.}"
