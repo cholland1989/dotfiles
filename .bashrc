@@ -13,4 +13,7 @@
 [ -f "${HOME}/.bash_functions" ] && source "${HOME}/.bash_functions"
 
 # Load completions.
+[ -f "/usr/local/etc/bash_completion" ] && source "/usr/local/etc/bash_completion"
+
+# Load completions.
 [ -f "/opt/homebrew/etc/profile.d/bash_completion.sh" ] && source "/opt/homebrew/etc/profile.d/bash_completion.sh"
