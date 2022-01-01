@@ -10,7 +10,7 @@ alias kill="kill -SIGKILL"
 alias df="df -h"
 
 # List files and directories in human readable format.
-[ "${TERM_PROGRAM}" == "iTerm.app" ] && alias ls="ls -lhF" || alias ls="ls -lhFN --color"
+[ "${TERM_PROGRAM}" == "iTerm.app" ] && alias ls="ls -lhF" || alias ls="ls -lhF --color"
 
 # Create parent directories as needed.
 alias mkdir="mkdir -p"
