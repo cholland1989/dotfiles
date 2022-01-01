@@ -68,3 +68,14 @@ function ffremux() {
         rename --expr 's/.*[sS](\d\d)[eE](\d\d).*/S$1E$2.mp4/' "${1%.*}.mp4"
     fi
 }
+
+# Convert MP4 audio to LAME encoded MP3.
+function ffaudio() {
+    if [ -z "${1}" ]; then
+        ffaudio "."
+    elif [ -d "${1}" ]; then
+        for FILE in "${1}"/**/*.{m4a,mp4}; do ffaudio "${FILE}"; done
+    elif [ -f "${1}" ]; then
+        ffmpeg -i "${1}" -c:v copy -c:a libmp3lame -q:a 0 "${1%.*}.mp3"
+    fi
+}
