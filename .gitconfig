@@ -31,6 +31,9 @@
     # Make rebase safer on macOS.
     trustctime = false
 
+    # Set the tab size.
+    pager = less -x4
+
 [color]
 
     # Enable colors in terminal output.
@@ -44,7 +47,7 @@
 [diff]
 
     # Attempt to preserve more context.
-    algorithm = patience
+    algorithm = minimal
 
     # Attempt to make the resulting patch easier to read.
     compactionHeuristic = true
@@ -69,3 +72,8 @@
 
     # Retain the default merge strategy.
     rebase = false
+
+[advice]
+
+    # Disable deprecation warning.
+    useCoreFSMonitorConfig = false
