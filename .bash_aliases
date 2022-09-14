@@ -52,7 +52,7 @@ alias zip="zip -qry"
 alias rm="rm -rf"
 
 # Download best available video and audio from YouTube.
-alias yt="youtube-dl --output '%(title)s.%(ext)s' --format bestvideo[ext=mp4]+bestaudio[ext=m4a] --merge-output-format mp4 --ignore-errors"
+alias yt="yt-dlp --output '%(title)s.%(ext)s' --format bestvideo[ext=mp4]+bestaudio[ext=m4a] --merge-output-format mp4 --ignore-errors"
 
 # Extract Zstandard archives.
 alias unzstd="tar --use-compress-program=zstd -xvf"
