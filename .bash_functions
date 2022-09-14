@@ -52,7 +52,7 @@ function ffremux() {
         PROBE=$(ffprobe -i "${1}" 2>&1 >/dev/null)
         VIDEO=$(echo "${PROBE}" | grep "Video:" | grep "Stream #")
         AUDIO=$(echo "${PROBE}" | grep "Audio:" | grep "Stream #")
-        H264=$(echo "${VIDEO}" | grep -n "h264" | grep -v "High 10" | head -n 1 | awk "${INDEX}")
+        H264=$(echo "${VIDEO}" | grep -n -E "(h264)|(hevc)" | grep -v "High 10" | head -n 1 | awk "${INDEX}")
         FLAC=$(echo "${AUDIO}" | head -n 1 | grep "flac")
         ENGS=$(echo "${AUDIO}" | grep -n -E "(eng)|(und)|[^)]: Audio" | grep -v "truehd" | head -n 1)
         [ -n "${ENGS}" ] && FLAC=$(echo "${ENGS}" | grep "flac")
@@ -69,12 +69,12 @@ function ffremux() {
     fi
 }
 
-# Convert MP4 audio to LAME encoded MP3.
+# Convert FLAC/MP4 audio to LAME encoded MP3.
 function ffaudio() {
     if [ -z "${1}" ]; then
         ffaudio "."
     elif [ -d "${1}" ]; then
-        for FILE in "${1}"/**/*.{m4a,mp4}; do ffaudio "${FILE}"; done
+        for FILE in "${1}"/**/*.{flac,m4a,mp4}; do ffaudio "${FILE}"; done
     elif [ -f "${1}" ]; then
         ffmpeg -i "${1}" -c:v copy -c:a libmp3lame -q:a 0 "${1%.*}.mp3"
     fi
