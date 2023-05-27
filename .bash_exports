@@ -48,6 +48,9 @@ export PIP_DISABLE_PIP_VERSION_CHECK=1
 # Fix potential connection issue.
 export ANSIBLE_SSH_ARGS="-o ControlMaster=no"
 
+# Set default directory for Bash.
+export BASH_HOME="${HOME}"
+
 # Set default path for Go.
 export GOPATH="${HOME}/.go"
 
