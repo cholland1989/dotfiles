@@ -57,6 +57,15 @@ alias yt="yt-dlp --output '%(title)s.%(ext)s' --format bestvideo[ext=mp4]+bestau
 # Extract Zstandard archives.
 alias unzstd="tar --use-compress-program=zstd -xvf"
 
+# Print stack trace to console.
+alias stack="curl -s http://127.0.0.1:6060/debug/pprof/goroutine?debug=1 > stack.out && cat stack.out | less; rm stack.out"
+
+# Print heap dump to console.
+alias heap="curl -s http://127.0.0.1:6060/debug/pprof/heap > heap.out && go tool pprof -text heap.out | less; rm heap.out"
+
+# Print mutex contention to console.
+alias mutex="curl -s http://127.0.0.1:6060/debug/pprof/mutex > mutex.out && go tool pprof -text mutex.out | less; rm mutex.out"
+
 # Hide files and directories.
 [ "${TERM_PROGRAM}" == "iTerm.app" ] && alias hide="chflags hidden"
 
