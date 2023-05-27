@@ -22,7 +22,7 @@ export HISTFILESIZE=1024
 export HISTCONTROL="ignoreboth"
 
 # Ignore specified commands.
-export HISTIGNORE="history*:ls*:pwd*"
+export HISTIGNORE="history*:pwd*"
 
 # Disable less history file.
 export LESSHISTFILE=-
