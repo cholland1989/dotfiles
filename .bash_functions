@@ -79,3 +79,14 @@ function ffaudio() {
         ffmpeg -i "${1}" -c:v copy -c:a libmp3lame -q:a 0 "${1%.*}.mp3"
     fi
 }
+
+# Convert MP3 audio to AAC encoded MP4.
+function ffvideo() {
+    if [ -z "${1}" ]; then
+        ffvideo "."
+    elif [ -d "${1}" ]; then
+        for FILE in "${1}"/**/*.mp3; do ffvideo "${FILE}"; done
+    elif [ -f "${1}" ]; then
+        ffmpeg -i "${1}" -c:a aac -b:a 192k "${1%.*}.m4a"
+    fi
+}
