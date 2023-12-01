@@ -51,6 +51,9 @@ alias zip="zip -qry"
 # Delete files and directories recursively.
 alias rm="rm -rf"
 
+# Capture network traffic.
+alias pcap="sudo tcpdump -w $(date +%s).pcap"
+
 # Download best available video and audio from YouTube.
 alias yt="yt-dlp --output '%(title)s.%(ext)s' --format bestvideo[ext=mp4]+bestaudio[ext=m4a] --merge-output-format mp4 --ignore-errors"
 
