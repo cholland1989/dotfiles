@@ -90,3 +90,12 @@ function ffvideo() {
         ffmpeg -i "${1}" -c:a aac -b:a 192k "${1%.*}.m4a"
     fi
 }
+
+# Convert Unix timestamp to date.
+function ts() {
+    if [ "${TERM_PROGRAM}" == "iTerm.app" ]; then
+        date -r "${1}" +'%Y-%m-%d %H:%M:%S'
+    else
+        date -d "@${1}" +'%Y-%m-%d %H:%M:%S'
+    fi
+}
