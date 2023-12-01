@@ -46,7 +46,7 @@ function ffremux() {
     if [ -z "${1}" ]; then
         ffremux "."
     elif [ -d "${1}" ]; then
-        for FILE in "${1}"/**/*.{m4v,mkv,avi}; do ffremux "${FILE}"; done
+        for FILE in "${1}"/**/*.{m4v,mkv,avi,ts}; do ffremux "${FILE}"; done
     elif [ -f "${1}" ]; then
         INDEX='BEGIN { FS = ":" } { print $1 }'
         PROBE=$(ffprobe -i "${1}" 2>&1 >/dev/null)
