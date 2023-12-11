@@ -51,6 +51,9 @@ export ANSIBLE_SSH_ARGS="-o ControlMaster=no"
 # Set default path for Go.
 export GOPATH="${HOME}/.go"
 
+# Set default path for Go using Cygwin.
+[ "${TERM_PROGRAM}" == "mintty" ] && export GOPATH="C:/Cygwin/${HOME}/.go"
+
 # Update system path.
 export PATH="${GOPATH}/bin:${PATH}"
 
