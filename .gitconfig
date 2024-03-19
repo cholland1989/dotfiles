@@ -9,7 +9,7 @@
 [init]
 
     # Set the default branch name.
-    defaultBranch = master
+    defaultBranch = main
 
 [core]
 
