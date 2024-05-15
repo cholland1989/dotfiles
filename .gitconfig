@@ -34,6 +34,9 @@
     # Set the tab size.
     pager = less -x4
 
+    # Disable line ending conversion.
+    autocrlf = false
+
 [color]
 
     # Enable colors in terminal output.
