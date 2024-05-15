@@ -80,3 +80,8 @@
 
     # Disable deprecation warning.
     useCoreFSMonitorConfig = false
+
+[url "ssh://git@github.com/"]
+
+    # Redirect HTTPS to SSH.
+    insteadOf = https://github.com/
