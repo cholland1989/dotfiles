@@ -1,0 +1,101 @@
+# Set terminal height.
+window-height = 128
+
+# Set terminal width.
+window-width = 256
+
+# Set terminal padding.
+window-padding-x = 8
+
+# Set font family.
+font-family = Monaco
+
+# Set font size.
+font-size = 14
+
+# Set font weight.
+font-thicken = true
+
+# Set cursor type.
+cursor-style = block
+
+# Disable blinking cursor.
+cursor-style-blink = false
+
+# Disable dynamic cursor.
+shell-integration-features = no-cursor
+
+# Enable copy on select.
+copy-on-select = clipboard
+
+# Set background color.
+background = #222222
+
+# Set foreground color.
+foreground = #CFCFC2
+
+# Set cursor color.
+cursor-color = #F8F8F2
+
+# Set cursor text color.
+cursor-text = #75715E
+
+# Set selection background color.
+selection-background = #75715E
+
+# Set selection foreground color.
+selection-foreground = #F8F8F2
+
+# Set black color.
+palette = 0=#222222
+
+# Set red color.
+palette = 1=#F92A72
+
+# Set green color.
+palette = 2=#A6E22E
+
+# Set yellow color.
+palette = 3=#E6DB74
+
+# Set blue color.
+palette = 4=#AE81FF
+
+# Set magenta color.
+palette = 5=#F92A72
+
+# Set cyan color.
+palette = 6=#66D9EF
+
+# Set white color.
+palette = 7=#CFCFC2
+
+# Set bold black color.
+palette = 8=#75715E
+
+# Set bold red color.
+palette = 9=#F92A72
+
+# Set bold green color.
+palette = 10=#A6E22E
+
+# Set bold yellow color.
+palette = 11=#E6DB74
+
+# Set bold blue color.
+palette = 12=#AE81FF
+
+# Set bold magenta color.
+palette = 13=#F92A72
+
+# Set bold cyan color.
+palette = 14=#66D9EF
+
+# Set bold white color.
+palette = 15=#F8F8F2
+
+# Disable automatic updates.
+auto-update = off
+
+# Disable confirm exit.
+quit-after-last-window-closed = true
