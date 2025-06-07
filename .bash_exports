@@ -48,6 +48,9 @@ export PIP_DISABLE_PIP_VERSION_CHECK=1
 # Fix potential connection issue.
 export ANSIBLE_SSH_ARGS="-o ControlMaster=no"
 
+# Update default directory.
+export BASH_HOME="${HOME}/Documents/GitHub"
+
 # Set default path for Go.
 export GOPATH="${GOPATH:-${HOME}/.go}"
 
