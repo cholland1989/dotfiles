@@ -28,6 +28,9 @@ shell-integration-features = no-cursor
 # Enable copy on select.
 copy-on-select = clipboard
 
+# Set terminal type.
+term = xterm-256color
+
 # Set background color.
 background = #222222
 
