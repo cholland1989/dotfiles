@@ -74,7 +74,7 @@ function ffaudio() {
     if [ -z "${1}" ]; then
         ffaudio "."
     elif [ -d "${1}" ]; then
-        for FILE in "${1}"/**/*.{flac,m4a,mp4}; do ffaudio "${FILE}"; done
+        for FILE in "${1}"/**/*.{flac,m4a,mp4,mkv,wav}; do ffaudio "${FILE}"; done
     elif [ -f "${1}" ]; then
         ffmpeg -i "${1}" -c:v copy -c:a libmp3lame -q:a 0 "${1%.*}.mp3"
     fi
