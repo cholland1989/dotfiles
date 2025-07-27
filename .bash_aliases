@@ -75,6 +75,9 @@ alias mutex="curl -s http://127.0.0.1:6060/debug/pprof/mutex > mutex.out && go t
 # Show files and directories.
 [ "${TERM_PROGRAM}" == "ghostty" ] && alias show="chflags nohidden"
 
+# Replace Docker with Podman.
+[ "${TERM_PROGRAM}" == "ghostty" ] && alias docker="podman"
+
 # Open a new Cygwin terminal.
 [ "${TERM_PROGRAM}" == "mintty" ] && alias cygwin="mintty -d - &"
 
