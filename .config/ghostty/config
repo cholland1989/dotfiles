@@ -25,8 +25,8 @@ cursor-style-blink = false
 # Disable dynamic cursor.
 shell-integration-features = no-cursor
 
-# Enable copy on select.
-copy-on-select = clipboard
+# Disable copy on select.
+copy-on-select = false
 
 # Set terminal type.
 term = xterm-256color
