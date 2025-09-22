@@ -69,6 +69,9 @@ alias heap="curl -s http://127.0.0.1:6060/debug/pprof/heap > heap.out && go tool
 # Print mutex contention to console.
 alias mutex="curl -s http://127.0.0.1:6060/debug/pprof/mutex > mutex.out && go tool pprof -text mutex.out | less; rm mutex.out"
 
+# Pull the latest changes from local repositories.
+alias pull="find '${BASH_HOME}' -maxdepth 1 -type d -not -path '*/.*' -exec git -C {} pull \;"
+
 # Hide files and directories.
 [ "${TERM_PROGRAM}" == "iTerm.app" ] && alias hide="chflags hidden"
 
