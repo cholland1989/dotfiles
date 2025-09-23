@@ -51,6 +51,9 @@ export ANSIBLE_SSH_ARGS="-o ControlMaster=no"
 # Update default directory.
 [ -d "${HOME}/Documents/GitHub" ] && export BASH_HOME="${HOME}/Documents/GitHub"
 
+# Update default directory.
+export BASH_HOME="${BASH_HOME:-${HOME}}"
+
 # Set default path for Go.
 export GOPATH="${GOPATH:-${HOME}/.go}"
 
