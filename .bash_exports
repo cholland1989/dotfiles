@@ -45,9 +45,6 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 # Disable PIP upgrade warning.
 export PIP_DISABLE_PIP_VERSION_CHECK=1
 
-# Fix potential connection issue.
-export ANSIBLE_SSH_ARGS="-o ControlMaster=no"
-
 # Update default directory.
 [ -d "${HOME}/Documents/GitHub" ] && export BASH_HOME="${HOME}/Documents/GitHub"
 
