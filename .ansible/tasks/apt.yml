@@ -1,0 +1,22 @@
+- name: Uninstalling Snap Packages
+  ansible.builtin.apt:
+    name: snapd
+    autoremove: true
+    state: absent
+  become: true
+  register: snapd
+
+- name: Disabling Snap Packages
+  ansible.builtin.dpkg_selections:
+    name: snapd
+    selection: hold
+  become: true
+  when: snapd.changed
+
+- name: Installing APT Packages
+  ansible.builtin.apt:
+    name: "{{ apt }}"
+    update_cache: true
+    state: present
+  become: true
+  when: apt is defined and apt | length > 0

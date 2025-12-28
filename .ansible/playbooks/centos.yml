@@ -1,0 +1,104 @@
+---
+- name: Setup CentOS Host
+  hosts: centos
+  vars:
+    dnf:
+      - autoconf
+      - automake
+      - bash
+      - bash-completion
+      - bc
+      - ca-certificates
+      - cargo
+      - clang
+      - cmake
+      - colordiff
+      - cronie
+      - curl
+      - cvs
+      - diffutils
+      - emacs
+      - ffmpeg-free
+      - file
+      - findutils
+      - g++
+      - gcc
+      - git
+      - graphviz
+      - grep
+      - gzip
+      - hostname
+      - htop
+      - jq
+      - kernel-devel
+      - kernel-headers
+      - libbpf
+      - llvm
+      - make
+      - mariadb
+      - mercurial
+      - nasm
+      - net-tools
+      - netcat
+      - open-vm-tools
+      - openssl
+      - p7zip
+      - pandoc
+      - patchutils
+      - pdfgrep
+      - perl
+      - postgresql
+      - python3
+      - python3-build
+      - python3-pip
+      - rsync
+      - ruby
+      - rustc
+      - screen
+      - socat
+      - stunnel
+      - subversion
+      - tcpdump
+      - telnet
+      - tmux
+      - tree
+      - unzip
+      - vim
+      - wget
+      - wireshark-cli
+      - zip
+      - zstd
+    pip:
+      - ansible
+      - ruff
+      - uv
+      - yt-dlp
+  tasks:
+    - name: Updating Hostname
+      ansible.builtin.import_tasks: ../tasks/hostname.yml
+    - name: Updating SSH Configuration
+      ansible.builtin.import_tasks: ../tasks/sshd.yml
+    - name: Updating Firewalld Rules
+      ansible.builtin.import_tasks: ../tasks/firewalld.yml
+    - name: Updating Sudo Permissions
+      ansible.builtin.import_tasks: ../tasks/sudoers.yml
+    - name: Updating System Packages
+      ansible.builtin.import_tasks: ../tasks/update.yml
+    - name: Installing Parallels Tools
+      ansible.builtin.import_tasks: ../tasks/parallels.yml
+    - name: Installing DNF Packages
+      ansible.builtin.import_tasks: ../tasks/dnf.yml
+    - name: Installing PIP Packages
+      ansible.builtin.import_tasks: ../tasks/pip.yml
+    - name: Installing Go
+      ansible.builtin.import_tasks: ../tasks/golang.yml
+    - name: Installing Rename
+      ansible.builtin.import_tasks: ../tasks/rename.yml
+    - name: Installing Docker
+      ansible.builtin.import_tasks: ../tasks/docker.yml
+    - name: Updating Kernel Parameters
+      ansible.builtin.import_tasks: ../tasks/sysctl.yml
+    - name: Updating System Packages
+      ansible.builtin.import_tasks: ../tasks/update.yml
+    - name: Updating Dotfiles
+      ansible.builtin.import_tasks: ../tasks/dotfiles.yml

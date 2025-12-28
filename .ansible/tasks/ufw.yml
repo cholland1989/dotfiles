@@ -1,0 +1,31 @@
+- name: Allowing SSH Traffic
+  community.general.ufw:
+    direction: in
+    from_ip: 0.0.0.0/0
+    to_port: ssh
+    proto: tcp
+    rule: allow
+  become: true
+
+- name: Allowing Outgoing Traffic
+  community.general.ufw:
+    direction: outgoing
+    default: allow
+  become: true
+
+- name: Denying Incoming Traffic
+  community.general.ufw:
+    direction: incoming
+    default: deny
+  become: true
+
+- name: Denying Routed Traffic
+  community.general.ufw:
+    direction: routed
+    default: deny
+  become: true
+
+- name: Enabling Firewall Service
+  community.general.ufw:
+    state: enabled
+  become: true

@@ -1,0 +1,11 @@
+- name: Installing Go
+  ansible.builtin.shell:
+    cmd: |
+      version=$(curl -fsSL https://go.dev/dl/?mode=json | jq -r .[0].version)
+      arch="{{ 'arm64' if ansible_architecture == 'aarch64' else 'amd64' if ansible_architecture == 'x86_64' else '386' }}"
+      curl -fsSL https://go.dev/dl/${version}.linux-${arch}.tar.gz |
+      tar -C /opt/ -xzf -
+      ln -s /opt/go/bin/go /usr/local/bin/go
+      ln -s /opt/go/bin/gofmt /usr/local/bin/gofmt
+    creates: /usr/local/bin/go
+  become: true

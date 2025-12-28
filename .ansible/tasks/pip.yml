@@ -1,0 +1,6 @@
+- name: Installing PIP Packages
+  ansible.builtin.pip:
+    name: "{{ pip }}"
+    break_system_packages: true
+    state: present
+  when: pip is defined and pip | length > 0

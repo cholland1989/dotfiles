@@ -1,0 +1,4 @@
+- name: Updating Hostname
+  ansible.builtin.hostname:
+    name: "{{ ansible_distribution + '-' + ansible_distribution_major_version }}"
+  become: true

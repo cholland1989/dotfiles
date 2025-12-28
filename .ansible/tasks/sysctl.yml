@@ -1,0 +1,19 @@
+- name: Refreshing Network Facts
+  ansible.builtin.gather_facts:
+
+- name: Disabling IPv6 Networking
+  ansible.builtin.lineinfile:
+    path: /etc/sysctl.d/00-disable-ipv6.conf
+    line: net.ipv6.conf.{{ item }}.disable_ipv6 = 1
+    mode: 0400
+    create: true
+    state: present
+  loop: "{{ ['all', 'default'] + ansible_interfaces }}"
+  become: true
+  register: sysctl
+
+- name: Reloading Kernel Parameters
+  ansible.builtin.command:
+    cmd: sysctl --system
+  become: true
+  when: sysctl.changed

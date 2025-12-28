@@ -1,0 +1,18 @@
+- name: Disabling IPv6 Networking
+  ansible.builtin.copy:
+    dest: /etc/default/grub.d/00-disable-ipv6.cfg
+    content: GRUB_CMDLINE_LINUX="${GRUB_CMDLINE_LINUX} ipv6.disable=1"
+    mode: 0400
+  become: true
+  register: grub
+
+- name: Updating GRUB Configuration
+  ansible.builtin.command:
+    cmd: update-grub
+  become: true
+  when: grub.changed
+
+- name: Rebooting System
+  ansible.builtin.reboot:
+  become: true
+  when: grub.changed

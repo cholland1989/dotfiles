@@ -1,0 +1,6 @@
+- name: Updating Sudo Permissions
+  ansible.builtin.copy:
+    dest: /etc/sudoers.d/00-{{ ansible_user_id }}
+    content: "{{ ansible_user_id }} ALL=NOPASSWD: ALL"
+    mode: 0400
+  become: true

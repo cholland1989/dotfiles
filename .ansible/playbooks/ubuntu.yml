@@ -1,0 +1,104 @@
+---
+- name: Setup Ubuntu Host
+  hosts: ubuntu
+  vars:
+    apt:
+      - autoconf
+      - automake
+      - bash
+      - bash-completion
+      - bc
+      - ca-certificates
+      - cargo
+      - clang
+      - cmake
+      - colordiff
+      - cron
+      - curl
+      - cvs
+      - diffutils
+      - emacs
+      - ffmpeg
+      - file
+      - findutils
+      - g++
+      - gcc
+      - git
+      - graphviz
+      - grep
+      - gzip
+      - hostname
+      - htop
+      - jq
+      - libbpf-dev
+      - libelf-dev
+      - linux-headers-generic
+      - llvm
+      - make
+      - mariadb-client
+      - mercurial
+      - nasm
+      - net-tools
+      - netcat-openbsd
+      - open-vm-tools
+      - openssl
+      - p7zip
+      - pandoc
+      - patchutils
+      - pdfgrep
+      - perl
+      - postgresql-client
+      - python-is-python3
+      - python3
+      - python3-build
+      - python3-pip
+      - python3-venv
+      - rsync
+      - ruby
+      - rustc
+      - screen
+      - socat
+      - stunnel
+      - subversion
+      - tcpdump
+      - telnet
+      - tmux
+      - tree
+      - tshark
+      - unzip
+      - vim
+      - wget
+      - zip
+      - zstd
+    pip:
+      - ansible
+      - ruff
+      - uv
+      - yt-dlp
+  tasks:
+    - name: Updating Hostname
+      ansible.builtin.import_tasks: ../tasks/hostname.yml
+    - name: Updating SSH Configuration
+      ansible.builtin.import_tasks: ../tasks/sshd.yml
+    - name: Updating UFW Rules
+      ansible.builtin.import_tasks: ../tasks/ufw.yml
+    - name: Updating GRUB Configuration
+      ansible.builtin.import_tasks: ../tasks/grub.yml
+    - name: Updating Sudo Permissions
+      ansible.builtin.import_tasks: ../tasks/sudoers.yml
+    - name: Updating System Packages
+      ansible.builtin.import_tasks: ../tasks/update.yml
+    - name: Installing Parallels Tools
+      ansible.builtin.import_tasks: ../tasks/parallels.yml
+    - name: Installing APT Packages
+      ansible.builtin.import_tasks: ../tasks/apt.yml
+    - name: Installing PIP Packages
+      ansible.builtin.import_tasks: ../tasks/pip.yml
+    - name: Installing Go
+      ansible.builtin.import_tasks: ../tasks/golang.yml
+    - name: Installing Rename
+      ansible.builtin.import_tasks: ../tasks/rename.yml
+    - name: Installing Docker
+      ansible.builtin.import_tasks: ../tasks/docker.yml
+    - name: Updating Dotfiles
+      ansible.builtin.import_tasks: ../tasks/dotfiles.yml

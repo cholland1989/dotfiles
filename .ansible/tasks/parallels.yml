@@ -1,0 +1,60 @@
+- name: Refreshing Device Facts
+  ansible.builtin.gather_facts:
+
+- name: Checking Parallels Tools Directory
+  ansible.builtin.stat:
+    path: /usr/lib/parallels-tools/
+  register: parallels
+
+- name: Checking Parallels Tools Image
+  ansible.builtin.set_fact:
+    available: "{{ 'Parallels\\x20Tools' in ansible_device_links.get('labels', {}).get('sr0', []) }}"
+    installed: "{{ parallels.stat.exists }}"
+
+- name: Mounting Parallels Tools Image
+  ansible.posix.mount:
+    src: /dev/sr0
+    path: /media/cdrom/
+    fstype: iso9660
+    state: mounted
+  become: true
+  when: available and not installed
+
+- name: Installing Parallels Tools Dependencies for Debian
+  ansible.builtin.package:
+    name:
+      - build-essential
+      - dkms
+      - libelf-dev
+      - linux-headers-generic
+    update_cache: true
+    state: present
+  become: true
+  when: available and not installed and ansible_os_family == "Debian"
+
+- name: Installing Parallels Tools Dependencies for RedHat
+  ansible.builtin.package:
+    name:
+      - checkpolicy
+      - gcc
+      - kernel-devel
+      - kernel-headers
+      - make
+      - selinux-policy-devel
+    update_cache: true
+    state: present
+  become: true
+  when: available and not installed and ansible_os_family == "RedHat"
+
+- name: Installing Parallels Tools
+  ansible.builtin.command:
+    cmd: /media/cdrom/install
+  become: true
+  when: available and not installed
+
+- name: Unmounting Parallels Tools Image
+  ansible.posix.mount:
+    path: /media/cdrom/
+    state: absent
+  become: true
+  when: available and not installed

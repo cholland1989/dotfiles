@@ -1,0 +1,30 @@
+- name: Uninstalling Cockpit Packages
+  ansible.builtin.dnf:
+    name:
+      - cockpit
+      - cockpit-bridge
+      - cockpit-ws
+    autoremove: true
+    state: absent
+  become: true
+
+- name: Enabling CRB Packages
+  community.general.dnf_config_manager:
+    name: crb
+    state: enabled
+  become: true
+
+- name: Enabling EPEL Packages
+  ansible.builtin.dnf:
+    name: epel-release
+    update_cache: true
+    state: present
+  become: true
+
+- name: Installing DNF Packages
+  ansible.builtin.dnf:
+    name: "{{ dnf }}"
+    update_cache: true
+    state: present
+  become: true
+  when: dnf is defined and dnf | length > 0

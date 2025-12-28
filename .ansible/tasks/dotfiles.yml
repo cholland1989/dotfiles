@@ -1,0 +1,25 @@
+- name: Checking Dotfiles Directory
+  ansible.builtin.stat:
+    path: "{{ ansible_user_dir }}/.git/"
+  register: dotfiles
+
+- name: Updating Dotfiles Directory
+  ansible.posix.synchronize:
+    src: ~/.git/
+    dest: "{{ ansible_user_dir }}/.git/"
+    owner: false
+    group: false
+  when: not dotfiles.stat.exists
+
+- name: Updating Dotfiles
+  ansible.builtin.command:
+    cmd: git -C "{{ ansible_user_dir }}" checkout .
+  when: not dotfiles.stat.exists
+
+- name: Updating SSH Keys
+  ansible.builtin.copy:
+    src: "{{ item }}"
+    dest: "{{ ansible_user_dir }}/.ssh/"
+    mode: 0600
+  with_fileglob:
+    - ~/.ssh/id_*

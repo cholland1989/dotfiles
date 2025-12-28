@@ -1,0 +1,50 @@
+- name: Allowing SSH Traffic
+  ansible.posix.firewalld:
+    zone: public
+    service: ssh
+    permanent: true
+    immediate: true
+    state: enabled
+  become: true
+
+- name: Denying Cockpit Traffic
+  ansible.posix.firewalld:
+    zone: public
+    service: cockpit
+    permanent: true
+    immediate: true
+    state: disabled
+  become: true
+
+- name: Denying DHCPv6 Client Traffic
+  ansible.posix.firewalld:
+    zone: public
+    service: dhcpv6-client
+    permanent: true
+    immediate: true
+    state: disabled
+  become: true
+
+- name: Denying Incoming Traffic
+  ansible.posix.firewalld:
+    zone: public
+    target: DROP
+    permanent: true
+    state: present
+  become: true
+  register: incoming
+
+- name: Denying Routed Traffic
+  ansible.posix.firewalld:
+    forward: true
+    permanent: true
+    state: disabled
+  become: true
+  register: routed
+
+- name: Enabling Firewall Service
+  ansible.builtin.service:
+    name: firewalld
+    enabled: true
+    state: "{{ 'reloaded' if incoming.changed or routed.changed else 'started' }}"
+  become: true

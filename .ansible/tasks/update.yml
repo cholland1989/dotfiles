@@ -1,0 +1,12 @@
+- name: Updating System Packages
+  ansible.builtin.package:
+    name: "*"
+    update_cache: true
+    state: latest
+  become: true
+  register: update
+
+- name: Rebooting System
+  ansible.builtin.reboot:
+  become: true
+  when: update.changed
