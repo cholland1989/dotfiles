@@ -22,3 +22,10 @@
     dest: "{{ ansible_user_dir }}/.ssh/"
     mode: 0600
   with_fileglob: ~/.ssh/id_*
+
+- name: Updating User Directory
+  ansible.builtin.synchronize:
+    src: "{{ lookup('ansible.builtin.env', 'BASH_HOME') }}/"
+    dest: "{{ ansible_user_dir }}/"
+    rsync_opts: --exclude=.DS_Store
+  when: lookup("ansible.builtin.env", "BASH_HOME") != ""
