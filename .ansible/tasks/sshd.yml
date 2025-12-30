@@ -3,8 +3,7 @@
     key: "{{ lookup('ansible.builtin.file', item) }}"
     user: "{{ ansible_user_id }}"
     state: present
-  with_fileglob:
-    - ~/.ssh/id_*.pub
+  with_fileglob: ~/.ssh/id_*.pub
 
 - name: Updating SSH Configuration
   ansible.builtin.copy:

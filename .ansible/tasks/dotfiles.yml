@@ -13,7 +13,7 @@
 
 - name: Updating Dotfiles
   ansible.builtin.command:
-    cmd: git -C "{{ ansible_user_dir }}" checkout .
+    cmd: git -C "{{ ansible_user_dir }}/" checkout .
   when: not dotfiles.stat.exists
 
 - name: Updating SSH Keys
@@ -21,5 +21,4 @@
     src: "{{ item }}"
     dest: "{{ ansible_user_dir }}/.ssh/"
     mode: 0600
-  with_fileglob:
-    - ~/.ssh/id_*
+  with_fileglob: ~/.ssh/id_*
