@@ -28,3 +28,11 @@
     state: present
   become: true
   when: dnf is defined and dnf | length > 0
+
+- name: Updating Wireshark Permissions
+  ansible.builtin.user:
+    name: "{{ ansible_user_id }}"
+    groups: wireshark
+    append: true
+  become: true
+  when: dnf is defined and "wireshark-cli" in dnf
