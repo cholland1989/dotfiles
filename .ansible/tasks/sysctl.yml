@@ -8,8 +8,8 @@
     mode: 0400
     create: true
     state: present
-  loop: "{{ ['all', 'default'] + ansible_interfaces }}"
   become: true
+  loop: "{{ ['all', 'default'] + ansible_interfaces }}"
   register: sysctl
 
 - name: Reloading Kernel Parameters
