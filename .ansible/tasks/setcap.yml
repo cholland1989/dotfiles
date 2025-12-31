@@ -1,0 +1,8 @@
+- name: Updating Capabilities
+  community.general.capabilities:
+    path: "{{ item.path }}"
+    capability: "{{ item.capability }}"
+    state: present
+  become: true
+  loop: "{{ setcap }}"
+  when: setcap is defined and setcap | length > 0

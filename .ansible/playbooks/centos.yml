@@ -73,6 +73,9 @@
       - ruff
       - uv
       - yt-dlp
+    setcap:
+      - { path: "/usr/sbin/tcpdump", capability: "cap_net_admin=ep" }
+      - { path: "/usr/sbin/tcpdump", capability: "cap_net_raw=ep" }
   tasks:
     - name: Updating Hostname
       ansible.builtin.import_tasks: ../tasks/hostname.yml
@@ -96,6 +99,8 @@
       ansible.builtin.import_tasks: ../tasks/rename.yml
     - name: Installing Docker
       ansible.builtin.import_tasks: ../tasks/docker.yml
+    - name: Updating Capabilities
+      ansible.builtin.import_tasks: ../tasks/setcap.yml
     - name: Updating Kernel Parameters
       ansible.builtin.import_tasks: ../tasks/sysctl.yml
     - name: Updating System Packages
