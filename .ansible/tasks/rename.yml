@@ -3,6 +3,11 @@
     cmd: |
       curl -fsSL https://github.com/ap/rename/archive/refs/tags/v1.601.tar.gz |
       tar -C /usr/local/bin/ --strip-components 1 -xzf -
-      chmod 0755 /usr/local/bin/rename
     creates: /usr/local/bin/rename
+  become: true
+
+- name: Updating Rename Permissions
+  ansible.builtin.file:
+    path: /usr/local/bin/rename
+    mode: 0755
   become: true
