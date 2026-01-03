@@ -55,7 +55,7 @@ export BASH_HOME="${BASH_HOME:-${HOME}}"
 export GOPATH="${GOPATH:-${HOME}/.go}"
 
 # Update system path.
-export PATH="${GOPATH}/bin:${HOME}/.cargo/bin:${HOME}/.local/bin:${PATH}"
+export PATH="${GOPATH}/bin:${HOME}/.cargo/bin:${HOME}/.local/bin:${HOME}/.venv/bin:${PATH}"
 
 # Enable local bash completions.
 [ -d "/usr/local/etc/bash_completion.d" ] && export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
