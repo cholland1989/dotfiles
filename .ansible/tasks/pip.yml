@@ -1,6 +1,7 @@
 - name: Installing PIP Packages
   ansible.builtin.pip:
     name: "{{ pip }}"
-    break_system_packages: true
+    virtualenv: "{{ ansible_user_dir }}/.venv/"
+    virtualenv_command: python3 -m venv
     state: present
   when: pip is defined and pip | length > 0
