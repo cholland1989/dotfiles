@@ -60,6 +60,7 @@
       - stunnel
       - subversion
       - tcpdump
+      - tcpreplay
       - telnet
       - tmux
       - tree
