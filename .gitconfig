@@ -73,8 +73,13 @@
 
 [pull]
 
-    # Retain the default merge strategy.
-    rebase = false
+    # Rebase the current branch on top of the upstream branch.
+    rebase = true
+
+[rebase]
+
+    # Automatically stash and re-apply pending changes.
+    autoStash = true
 
 [advice]
 
