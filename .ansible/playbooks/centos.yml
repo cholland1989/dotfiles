@@ -50,6 +50,7 @@
       - postgresql
       - python3
       - python3-build
+      - python3-devel
       - python3-pip
       - rsync
       - ruby
