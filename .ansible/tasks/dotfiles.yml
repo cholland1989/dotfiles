@@ -16,6 +16,12 @@
     cmd: git -C "{{ ansible_user_dir }}/" checkout .
   when: not dotfiles.stat.exists
 
+- name: Updating Git Configuration
+  ansible.builtin.copy:
+    src: ~/.gitconfig
+    dest: "{{ ansible_user_dir }}/.gitconfig"
+    mode: 0644
+
 - name: Updating SSH Keys
   ansible.builtin.copy:
     src: "{{ item }}"
