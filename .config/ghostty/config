@@ -25,6 +25,9 @@ cursor-style-blink = false
 # Disable dynamic cursor.
 shell-integration-features = no-cursor
 
+# Disable bell notification.
+bell-features = no-attention, no-title
+
 # Enable copy on select.
 copy-on-select = clipboard
 
