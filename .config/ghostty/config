@@ -1,3 +1,9 @@
+# Override macOS icon.
+macos-icon = custom
+
+# Set macOS icon.
+macos-custom-icon = ~/.config/ghostty/Ghostty.icns
+
 # Set terminal height.
 window-height = 128
 
