@@ -22,6 +22,9 @@ font-size = 14
 # Set font weight.
 font-thicken = true
 
+# Set font kerning.
+adjust-cell-width = -1
+
 # Set cursor type.
 cursor-style = block
 
