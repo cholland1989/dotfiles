@@ -1,8 +1,6 @@
 - name: Installing Rename
   ansible.builtin.shell:
-    cmd: |
-      curl -fsSL https://github.com/ap/rename/archive/refs/tags/v1.601.tar.gz |
-      tar -C /usr/local/bin/ --strip-components 1 -xzf -
+    cmd: curl -fsSL https://github.com/ap/rename/archive/refs/tags/v1.601.tar.gz | tar -C /usr/local/bin/ --strip-components 1 -xzf -
     creates: /usr/local/bin/rename
   become: true
 

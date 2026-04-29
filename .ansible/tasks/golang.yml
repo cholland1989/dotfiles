@@ -3,8 +3,7 @@
     cmd: |
       version=$(curl -fsSL https://go.dev/dl/?mode=json | jq -r .[0].version)
       architecture="{{ 'arm64' if ansible_architecture == 'aarch64' else 'amd64' if ansible_architecture == 'x86_64' else '386' }}"
-      curl -fsSL https://go.dev/dl/${version}.linux-${architecture}.tar.gz |
-      tar -C /opt/ -xzf -
+      curl -fsSL https://go.dev/dl/${version}.linux-${architecture}.tar.gz | tar -C /opt/ -xzf -
     creates: /opt/go/
   become: true
 
