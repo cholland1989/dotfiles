@@ -1,0 +1,22 @@
+- name: Increasing Swap Space
+  ansible.builtin.shell:
+    cmd: |
+      swapoff -a
+      dd if=/dev/zero of=/swap.img bs=1M count={{ swap }}
+      chmod 600 /swap.img
+      mkswap /swap.img
+      swapon /swap.img
+  become: true
+  when: swap is defined and ansible_swaptotal_mb < swap - 1
+
+- name: Persisting Swap Space
+  ansible.posix.mount:
+    name: none
+    src: /swap.img
+    fstype: swap
+    opts: sw
+    passno: 0
+    dump: 0
+    state: present
+  become: true
+  when: swap is defined and ansible_swaptotal_mb < swap - 1

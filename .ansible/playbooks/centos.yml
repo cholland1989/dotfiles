@@ -78,6 +78,7 @@
     setcap:
       - { path: "/usr/sbin/tcpdump", capability: "cap_net_admin=ep" }
       - { path: "/usr/sbin/tcpdump", capability: "cap_net_raw=ep" }
+    swap: 8192
   tasks:
     - name: Updating Hostname
       ansible.builtin.import_tasks: ../tasks/hostname.yml
@@ -109,3 +110,5 @@
       ansible.builtin.import_tasks: ../tasks/update.yml
     - name: Updating Dotfiles
       ansible.builtin.import_tasks: ../tasks/dotfiles.yml
+    - name: Increasing Swap Space
+      ansible.builtin.import_tasks: ../tasks/swap.yml
