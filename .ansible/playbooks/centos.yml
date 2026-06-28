@@ -10,7 +10,6 @@
       - bc
       - ca-certificates
       - cargo
-      - chromium
       - clang
       - cmake
       - colordiff
