@@ -70,6 +70,3 @@ export PATH="${GOPATH}/bin:${HOME}/.cargo/bin:${HOME}/.local/bin:${HOME}/.venv/b
 [ -d "/opt" ] && for DIR in $(find /opt -follow -maxdepth 1 -type d); do
     [ -d "${DIR}/bin" ] && export PATH="${DIR}/bin:${PATH}" || export PATH="${DIR}:${PATH}"
 done
-
-# Enable delta pager.
-command -v delta >/dev/null 2>&1 && export GIT_PAGER="delta"
