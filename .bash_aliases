@@ -30,9 +30,6 @@ alias diff="colordiff"
 # Replace Vi with Vim.
 alias vi="vim"
 
-# Retain TextMate shortcut for Sublime Text.
-alias mate="subl"
-
 # Prefer symbolic links.
 alias ln="ln -s"
 
