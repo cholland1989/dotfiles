@@ -66,14 +66,6 @@
     # Show hex comparison of binary files.
     textconv = hexdump -v -C
 
-[delta]
-
-    # Enable line numbers.
-    line-numbers = true
-
-    # Disable side-by-side view.
-    side-by-side = false
-
 [push]
 
     # Refuse to push if the upstream branch's name is different.
