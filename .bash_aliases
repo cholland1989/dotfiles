@@ -10,7 +10,7 @@ alias kill="kill -SIGKILL"
 alias df="df -h"
 
 # List files and directories in human readable format.
-[ "${TERM_PROGRAM}" == "iTerm.app" ] && alias ls="ls -lhF" || alias ls="ls -lhF --color"
+[ "${TERM_PROGRAM}" == "ghostty" ] && alias ls="ls -lhF" || alias ls="ls -lhF --color"
 
 # Create parent directories as needed.
 alias mkdir="mkdir -p"
@@ -73,13 +73,13 @@ alias mutex="curl -s http://127.0.0.1:6060/debug/pprof/mutex > mutex.out && go t
 alias pull="find '${BASH_HOME}' -maxdepth 1 -type d -not -path '*/.*' -exec git -C {} pull \;"
 
 # Hide files and directories.
-[ "${TERM_PROGRAM}" == "iTerm.app" ] && alias hide="chflags hidden"
+[ "${TERM_PROGRAM}" == "ghostty" ] && alias hide="chflags hidden"
 
 # Show files and directories.
-[ "${TERM_PROGRAM}" == "iTerm.app" ] && alias show="chflags nohidden"
+[ "${TERM_PROGRAM}" == "ghostty" ] && alias show="chflags nohidden"
 
 # Replace Docker with Podman.
-[ "${TERM_PROGRAM}" == "iTerm.app" ] && alias docker="podman"
+[ "${TERM_PROGRAM}" == "ghostty" ] && alias docker="podman"
 
 # Open a new Cygwin terminal.
 [ "${TERM_PROGRAM}" == "mintty" ] && alias cygwin="mintty -d - &"
