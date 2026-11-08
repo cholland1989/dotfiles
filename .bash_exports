@@ -51,6 +51,9 @@ export PYTHONDONTWRITEBYTECODE=1
 # Disable PIP upgrade warning.
 export PIP_DISABLE_PIP_VERSION_CHECK=1
 
+# Disable Claude built-in subagents.
+export CLAUDE_AGENT_SDK_DISABLE_BUILTIN_AGENTS=1
+
 # Update default directory.
 [ -d "${HOME}/Documents/GitHub" ] && export BASH_HOME="${HOME}/Documents/GitHub"
 
