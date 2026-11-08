@@ -6,6 +6,9 @@
     # Set the committer field of commits.
     email = cholland1989@fastmail.com
 
+    # Set the signing key for commits.
+    signingkey = ~/.ssh/id_ed25519.pub
+
 [init]
 
     # Set the default branch name.
@@ -90,3 +93,23 @@
 
     # Redirect HTTPS to SSH.
     insteadOf = https://github.com/
+
+[gpg]
+
+    # Sign commits with SSH keys.
+    format = ssh
+
+[gpg "ssh"]
+
+    # Specify valid SSH signing keys.
+    allowedSignersFile = ~/.ssh/allowed_signers
+
+[commit]
+
+    # Disable commit signing.
+    gpgsign = false
+
+[tag]
+
+    # Disable tag signing.
+    gpgsign = false
