@@ -1,0 +1,27 @@
+{
+  "cleanupPeriodDays": 7,
+  "attribution": {
+    "commit": "",
+    "pr": "",
+    "sessionUrl": false
+  },
+  "includeCoAuthoredBy": false,
+  "permissions": {
+    "defaultMode": "auto"
+  },
+  "model": "opus",
+  "disableRemoteControl": true,
+  "disableWorkflows": true,
+  "outputStyle": "Concise",
+  "viewMode": "focus",
+  "feedbackSurveyRate": 0,
+  "feedbackDrafts": "off",
+  "spinnerTipsEnabled": false,
+  "promptSuggestionEnabled": false,
+  "awaySummaryEnabled": false,
+  "timeFormat": "%Y-%m-%d %H:%M",
+  "skipWorkflowUsageWarning": true,
+  "theme": "dark-ansi",
+  "skipAutoPermissionPrompt": true,
+  "disableDeepLinkRegistration": "disable"
+}
