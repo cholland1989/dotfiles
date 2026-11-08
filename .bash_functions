@@ -101,3 +101,13 @@ function ts() {
         date -d "@${1}" +'%Y-%m-%d %H:%M:%S'
     fi
 }
+
+# Snapshot local database.
+function snapshot() {
+    [ -n "${1}" ] && dropdb --if-exists "${1}-snapshot" && createdb -T "${1}" "${1}-snapshot"
+}
+
+# Restore local database.
+function restore() {
+    [ -n "${1}" ] && dropdb --if-exists "${1}" && createdb -T "${1}-snapshot" "${1}"
+}
