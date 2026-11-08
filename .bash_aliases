@@ -51,6 +51,9 @@ alias rm="rm -rf"
 # Generate random UUIDv4.
 alias uuid="uuidgen"
 
+# Generate random secret.
+alias secret="openssl rand -hex"
+
 # Capture network traffic.
 alias pcap='tcpdump -w $(date +%s).pcap'
 
