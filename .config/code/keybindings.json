@@ -1,0 +1,427 @@
+[
+    {
+        "key": "alt+0",
+        "command": "-workbench.action.lastEditorInGroup",
+        "when": "isWindows"
+    },
+    {
+        "key": "alt+0",
+        "command": "workbench.action.focusSideBar",
+        "when": "isWindows"
+    },
+    {
+        "key": "alt+1",
+        "command": "-workbench.action.openEditorAtIndex1",
+        "when": "isWindows"
+    },
+    {
+        "key": "alt+1",
+        "command": "workbench.action.focusFirstEditorGroup",
+        "when": "isWindows"
+    },
+    {
+        "key": "alt+2",
+        "command": "-workbench.action.openEditorAtIndex2",
+        "when": "isWindows"
+    },
+    {
+        "key": "alt+2",
+        "command": "workbench.action.focusSecondEditorGroup",
+        "when": "isWindows"
+    },
+    {
+        "key": "alt+3",
+        "command": "-workbench.action.openEditorAtIndex3",
+        "when": "isWindows"
+    },
+    {
+        "key": "alt+3",
+        "command": "workbench.action.focusThirdEditorGroup",
+        "when": "isWindows"
+    },
+    {
+        "key": "alt+4",
+        "command": "-workbench.action.openEditorAtIndex4",
+        "when": "isWindows"
+    },
+    {
+        "key": "alt+4",
+        "command": "workbench.action.focusFourthEditorGroup",
+        "when": "isWindows"
+    },
+    {
+        "key": "alt+5",
+        "command": "-workbench.action.openEditorAtIndex5",
+        "when": "isWindows"
+    },
+    {
+        "key": "alt+5",
+        "command": "workbench.action.focusFifthEditorGroup",
+        "when": "isWindows"
+    },
+    {
+        "key": "alt+6",
+        "command": "-workbench.action.openEditorAtIndex6",
+        "when": "isWindows"
+    },
+    {
+        "key": "alt+6",
+        "command": "workbench.action.focusSixthEditorGroup",
+        "when": "isWindows"
+    },
+    {
+        "key": "alt+7",
+        "command": "-workbench.action.openEditorAtIndex7",
+        "when": "isWindows"
+    },
+    {
+        "key": "alt+7",
+        "command": "workbench.action.focusSeventhEditorGroup",
+        "when": "isWindows"
+    },
+    {
+        "key": "alt+8",
+        "command": "-workbench.action.openEditorAtIndex8",
+        "when": "isWindows"
+    },
+    {
+        "key": "alt+8",
+        "command": "workbench.action.focusEighthEditorGroup",
+        "when": "isWindows"
+    },
+    {
+        "key": "alt+9",
+        "command": "-workbench.action.openEditorAtIndex9",
+        "when": "isWindows"
+    },
+    {
+        "key": "alt+9",
+        "command": "workbench.action.lastEditorInGroup",
+        "when": "isWindows"
+    },
+    {
+        "key": "cmd+0",
+        "command": "-workbench.action.focusSideBar",
+        "when": "isMac"
+    },
+    {
+        "key": "cmd+1",
+        "command": "workbench.action.openEditorAtIndex1",
+        "when": "isMac"
+    },
+    {
+        "key": "cmd+1",
+        "command": "-workbench.action.focusFirstEditorGroup",
+        "when": "isMac"
+    },
+    {
+        "key": "cmd+2",
+        "command": "workbench.action.openEditorAtIndex2",
+        "when": "isMac"
+    },
+    {
+        "key": "cmd+2",
+        "command": "-workbench.action.focusSecondEditorGroup",
+        "when": "isMac"
+    },
+    {
+        "key": "cmd+3",
+        "command": "workbench.action.openEditorAtIndex3",
+        "when": "isMac"
+    },
+    {
+        "key": "cmd+3",
+        "command": "-workbench.action.focusThirdEditorGroup",
+        "when": "isMac"
+    },
+    {
+        "key": "cmd+4",
+        "command": "workbench.action.openEditorAtIndex4",
+        "when": "isMac"
+    },
+    {
+        "key": "cmd+4",
+        "command": "-workbench.action.focusFourthEditorGroup",
+        "when": "isMac"
+    },
+    {
+        "key": "cmd+5",
+        "command": "workbench.action.openEditorAtIndex5",
+        "when": "isMac"
+    },
+    {
+        "key": "cmd+5",
+        "command": "-workbench.action.focusFifthEditorGroup",
+        "when": "isMac"
+    },
+    {
+        "key": "cmd+6",
+        "command": "workbench.action.openEditorAtIndex6",
+        "when": "isMac"
+    },
+    {
+        "key": "cmd+6",
+        "command": "-workbench.action.focusSixthEditorGroup",
+        "when": "isMac"
+    },
+    {
+        "key": "cmd+7",
+        "command": "workbench.action.openEditorAtIndex7",
+        "when": "isMac"
+    },
+    {
+        "key": "cmd+7",
+        "command": "-workbench.action.focusSeventhEditorGroup",
+        "when": "isMac"
+    },
+    {
+        "key": "cmd+8",
+        "command": "workbench.action.openEditorAtIndex8",
+        "when": "isMac"
+    },
+    {
+        "key": "cmd+8",
+        "command": "-workbench.action.focusEighthEditorGroup",
+        "when": "isMac"
+    },
+    {
+        "key": "cmd+9",
+        "command": "workbench.action.openEditorAtIndex9",
+        "when": "isMac"
+    },
+    {
+        "key": "cmd+9",
+        "command": "-workbench.action.lastEditorInGroup",
+        "when": "isMac"
+    },
+    {
+        "key": "cmd+g",
+        "command": "-editor.action.nextMatchFindAction",
+        "when": "isMac && editorFocus"
+    },
+    {
+        "key": "cmd+g",
+        "command": "workbench.action.gotoLine",
+        "when": "isMac"
+    },
+    {
+        "key": "cmd+shift+g",
+        "command": "-editor.action.previousMatchFindAction",
+        "when": "isMac && editorFocus"
+    },
+    {
+        "key": "ctrl+0",
+        "command": "workbench.action.focusSideBar",
+        "when": "isMac"
+    },
+    {
+        "key": "ctrl+0",
+        "command": "-workbench.action.lastEditorInGroup",
+        "when": "isMac"
+    },
+    {
+        "key": "ctrl+0",
+        "command": "-workbench.action.focusSideBar",
+        "when": "isWindows"
+    },
+    {
+        "key": "ctrl+0",
+        "command": "workbench.action.lastEditorInGroup",
+        "when": "isWindows"
+    },
+    {
+        "key": "ctrl+1",
+        "command": "-workbench.action.openEditorAtIndex1",
+        "when": "isMac"
+    },
+    {
+        "key": "ctrl+1",
+        "command": "workbench.action.focusFirstEditorGroup",
+        "when": "isMac"
+    },
+    {
+        "key": "ctrl+1",
+        "command": "-workbench.action.focusFirstEditorGroup",
+        "when": "isWindows"
+    },
+    {
+        "key": "ctrl+1",
+        "command": "workbench.action.openEditorAtIndex1",
+        "when": "isWindows"
+    },
+    {
+        "key": "ctrl+2",
+        "command": "-workbench.action.openEditorAtIndex2",
+        "when": "isMac"
+    },
+    {
+        "key": "ctrl+2",
+        "command": "workbench.action.focusSecondEditorGroup",
+        "when": "isMac"
+    },
+    {
+        "key": "ctrl+2",
+        "command": "-workbench.action.focusSecondEditorGroup",
+        "when": "isWindows"
+    },
+    {
+        "key": "ctrl+2",
+        "command": "workbench.action.openEditorAtIndex2",
+        "when": "isWindows"
+    },
+    {
+        "key": "ctrl+3",
+        "command": "-workbench.action.openEditorAtIndex3",
+        "when": "isMac"
+    },
+    {
+        "key": "ctrl+3",
+        "command": "workbench.action.focusThirdEditorGroup",
+        "when": "isMac"
+    },
+    {
+        "key": "ctrl+3",
+        "command": "-workbench.action.focusThirdEditorGroup",
+        "when": "isWindows"
+    },
+    {
+        "key": "ctrl+3",
+        "command": "workbench.action.openEditorAtIndex3",
+        "when": "isWindows"
+    },
+    {
+        "key": "ctrl+4",
+        "command": "-workbench.action.openEditorAtIndex4",
+        "when": "isMac"
+    },
+    {
+        "key": "ctrl+4",
+        "command": "workbench.action.focusFourthEditorGroup",
+        "when": "isMac"
+    },
+    {
+        "key": "ctrl+4",
+        "command": "-workbench.action.focusFourthEditorGroup",
+        "when": "isWindows"
+    },
+    {
+        "key": "ctrl+4",
+        "command": "workbench.action.openEditorAtIndex4",
+        "when": "isWindows"
+    },
+    {
+        "key": "ctrl+5",
+        "command": "-workbench.action.openEditorAtIndex5",
+        "when": "isMac"
+    },
+    {
+        "key": "ctrl+5",
+        "command": "workbench.action.focusFifthEditorGroup",
+        "when": "isMac"
+    },
+    {
+        "key": "ctrl+5",
+        "command": "-workbench.action.focusFifthEditorGroup",
+        "when": "isWindows"
+    },
+    {
+        "key": "ctrl+5",
+        "command": "workbench.action.openEditorAtIndex5",
+        "when": "isWindows"
+    },
+    {
+        "key": "ctrl+6",
+        "command": "-workbench.action.openEditorAtIndex6",
+        "when": "isMac"
+    },
+    {
+        "key": "ctrl+6",
+        "command": "workbench.action.focusSixthEditorGroup",
+        "when": "isMac"
+    },
+    {
+        "key": "ctrl+6",
+        "command": "-workbench.action.focusSixthEditorGroup",
+        "when": "isWindows"
+    },
+    {
+        "key": "ctrl+6",
+        "command": "workbench.action.openEditorAtIndex6",
+        "when": "isWindows"
+    },
+    {
+        "key": "ctrl+7",
+        "command": "-workbench.action.openEditorAtIndex7",
+        "when": "isMac"
+    },
+    {
+        "key": "ctrl+7",
+        "command": "workbench.action.focusSeventhEditorGroup",
+        "when": "isMac"
+    },
+    {
+        "key": "ctrl+7",
+        "command": "-workbench.action.focusSeventhEditorGroup",
+        "when": "isWindows"
+    },
+    {
+        "key": "ctrl+7",
+        "command": "workbench.action.openEditorAtIndex7",
+        "when": "isWindows"
+    },
+    {
+        "key": "ctrl+8",
+        "command": "-workbench.action.openEditorAtIndex8",
+        "when": "isMac"
+    },
+    {
+        "key": "ctrl+8",
+        "command": "workbench.action.focusEighthEditorGroup",
+        "when": "isMac"
+    },
+    {
+        "key": "ctrl+8",
+        "command": "-workbench.action.focusEighthEditorGroup",
+        "when": "isWindows"
+    },
+    {
+        "key": "ctrl+8",
+        "command": "workbench.action.openEditorAtIndex8",
+        "when": "isWindows"
+    },
+    {
+        "key": "ctrl+9",
+        "command": "-workbench.action.openEditorAtIndex9",
+        "when": "isMac"
+    },
+    {
+        "key": "ctrl+9",
+        "command": "workbench.action.lastEditorInGroup",
+        "when": "isMac"
+    },
+    {
+        "key": "ctrl+9",
+        "command": "-workbench.action.lastEditorInGroup",
+        "when": "isWindows"
+    },
+    {
+        "key": "ctrl+9",
+        "command": "workbench.action.openEditorAtIndex9",
+        "when": "isWindows"
+    },
+    {
+        "key": "ctrl+g",
+        "command": "editor.action.nextMatchFindAction",
+        "when": "isMac && editorFocus"
+    },
+    {
+        "key": "ctrl+g",
+        "command": "-workbench.action.gotoLine",
+        "when": "isMac"
+    },
+    {
+        "key": "ctrl+shift+g",
+        "command": "editor.action.previousMatchFindAction",
+        "when": "isMac && editorFocus"
+    }
+]
