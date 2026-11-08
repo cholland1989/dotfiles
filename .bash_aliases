@@ -48,6 +48,9 @@ alias zip="zip -qry"
 # Delete files and directories recursively.
 alias rm="rm -rf"
 
+# Generate random UUIDv4.
+alias uuid="uuidgen"
+
 # Capture network traffic.
 alias pcap='tcpdump -w $(date +%s).pcap'
 
