@@ -40,6 +40,9 @@ bell-features = no-attention, no-title
 # Enable copy on select.
 copy-on-select = clipboard
 
+# Paste from system clipboard.
+middle-click-action = clipboard-paste
+
 # Set terminal type.
 term = xterm-256color
 
