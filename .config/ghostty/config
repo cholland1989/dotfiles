@@ -112,8 +112,5 @@ palette = 14=#66D9EF
 # Set bold white color.
 palette = 15=#F8F8F2
 
-# Disable automatic updates.
-auto-update = off
-
 # Disable confirm exit.
 quit-after-last-window-closed = true
