@@ -93,7 +93,7 @@ function ffvideo() {
 
 # Convert Unix timestamp to date.
 function ts() {
-    if [ "${TERM_PROGRAM}" == "iTerm.app" ]; then
+    if [ "${TERM_PROGRAM}" == "ghostty" ]; then
         date -r "${1}" +'%Y-%m-%d %H:%M:%S'
     else
         date -d "@${1}" +'%Y-%m-%d %H:%M:%S'
