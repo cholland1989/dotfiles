@@ -23,7 +23,7 @@
   "spinnerTipsEnabled": false,
   "promptSuggestionEnabled": false,
   "awaySummaryEnabled": false,
-  "timeFormat": "%Y-%m-%d %H:%M",
+  "timeFormat": "12-hour",
   "skipWorkflowUsageWarning": true,
   "theme": "dark-ansi",
   "skipAutoPermissionPrompt": true,
