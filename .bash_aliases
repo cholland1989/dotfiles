@@ -21,9 +21,6 @@ alias chmod="chmod -R"
 # Change file owner recursively.
 alias chown="chown -R"
 
-# Display new output to file.
-alias tail="tail -128f"
-
 # Replace diff with colordiff.
 alias diff="colordiff"
 
